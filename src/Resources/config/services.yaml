@@ -1,0 +1,25 @@
+services:
+  _defaults:
+    public: true
+    autowire: true
+    autoconfigure: true
+
+  Onisep\IbexaHealthCheckBundle\Controller\:
+    resource: '../../Controller/*Controller.php'
+    tags: [ 'controller.service_arguments' ]
+
+  Onisep\IbexaHealthCheckBundle\Check\:
+    resource: '../../Check/*Check.php'
+
+  Onisep\IbexaHealthCheckBundle\Check\DataCheck:
+    tags: [ 'doctrine.orm.entity_manager' ]
+
+  Onisep\IbexaHealthCheckBundle\Check\SolrCheck:
+    arguments:
+      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\HttpClient'
+      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointRegistry'
+      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointResolver'
+
+  Onisep\IbexaHealthCheckBundle\Check\TikaCheck:
+    arguments:
+      - '@Vaites\ApacheTika\Clients\WebClient'
