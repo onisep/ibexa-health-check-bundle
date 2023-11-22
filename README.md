@@ -43,7 +43,7 @@ return [
 ```yaml
 # app/config/routing.yml or config/routing.yaml
 
-_healthCheck_routes:
+_healthCheck:
   resource: '@IbexaHealthCheckBundle/Resources/config/routes.yaml'
 ```
 ## License
