@@ -16,6 +16,8 @@ class TikaCheck extends Check implements CheckInterface
 
     public function check(): array
     {
-        return $this->result(str_contains($this->tikaClient->request('text', 'https://raw.githubusercontent.com/vaites/php-apache-tika/master/samples/sample7.pdf'), 'pour être utilisable'));
+        $documentOutput = $this->tikaClient->request('text', 'https://raw.githubusercontent.com/vaites/php-apache-tika/master/samples/sample7.pdf');
+
+        return $this->result(str_contains($documentOutput, 'pour être utilisable'));
     }
 }

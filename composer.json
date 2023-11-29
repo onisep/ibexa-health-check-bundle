@@ -12,7 +12,8 @@
         "ezsystems/apache-tika-bundle": "*",
         "ibexa/core": "^4.5.3",
         "http-interop/http-factory-guzzle": "^1.2",
-        "ibexa/search": "^4.5.3"
+        "ibexa/search": "^4.5.3",
+        "ibexa/solr": "^4.5.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.38"

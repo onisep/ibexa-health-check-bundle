@@ -2,9 +2,9 @@
 
 namespace Onisep\IbexaHealthCheckBundle\Check;
 
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointRegistry;
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointResolver;
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\HttpClient;
+use Ibexa\Solr\Gateway\EndpointRegistry;
+use Ibexa\Solr\Gateway\EndpointResolver;
+use Ibexa\Solr\Gateway\HttpClient;
 
 class SolrCheck extends Check implements CheckInterface
 {
@@ -34,9 +34,9 @@ class SolrCheck extends Check implements CheckInterface
             '/admin/ping'
         );
 
-        return [
-            'success' => 'OK' === json_decode($response->body)->{'status'},
-            'detail' => ['Qtime' => json_decode($response->body)->{'responseHeader'}->{'QTime'}],
-        ];
+        return $this->result(
+            'OK' === json_decode($response->body)->{'status'},
+            ['Qtime' => json_decode($response->body)->{'responseHeader'}->{'QTime'}]
+        );
     }
 }

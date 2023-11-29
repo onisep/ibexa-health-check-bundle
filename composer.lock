@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97aa96772093a7bc1635cf4b777ba458",
+    "content-hash": "cfc37ef6bfffc22e4c8232cf91c4cabd",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -2364,6 +2364,80 @@
             "time": "2023-11-03T12:48:34+00:00"
         },
         {
+            "name": "ibexa/solr",
+            "version": "v4.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibexa/solr.git",
+                "reference": "3fc55d2883f93e81161d8f0bc071e10a5885c718"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibexa/solr/zipball/3fc55d2883f93e81161d8f0bc071e10a5885c718",
+                "reference": "3fc55d2883f93e81161d8f0bc071e10a5885c718",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-xmlwriter": "*",
+                "ibexa/core": "~4.5.0",
+                "netgen/query-translator": "^1.0.2",
+                "php": "^7.4 || ^8.0",
+                "symfony/config": "^5.0",
+                "symfony/console": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/http-client": "^5.4",
+                "symfony/http-kernel": "^5.0"
+            },
+            "replace": {
+                "ezsystems/ezplatform-solr-search-engine": "*"
+            },
+            "require-dev": {
+                "ibexa/code-style": "^1.0",
+                "ibexa/doctrine-schema": "~4.5.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-symfony": "^1.2",
+                "phpunit/phpunit": "^8.2",
+                "symfony/proxy-manager-bridge": "^5.4"
+            },
+            "type": "ibexa-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Solr\\": "src/lib/",
+                    "Ibexa\\Bundle\\Solr\\": "src/bundle/",
+                    "Ibexa\\Contracts\\Solr\\": "src/contracts/",
+                    "Ibexa\\Tests\\Solr\\SetupFactory\\": "tests/lib/SetupFactory/",
+                    "EzSystems\\EzPlatformSolrSearchEngine\\": "src/lib/",
+                    "EzSystems\\EzPlatformSolrSearchEngineBundle\\": "src/bundle/",
+                    "EzSystems\\EzPlatformSolrSearchEngine\\Tests\\SetupFactory\\": "tests/lib/SetupFactory/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "eZ Systems dev team",
+                    "email": "dev-team@ibexa.co"
+                }
+            ],
+            "description": "Solr search engine implementation for Ibexa",
+            "support": {
+                "issues": "https://github.com/ibexa/solr/issues",
+                "source": "https://github.com/ibexa/solr/tree/v4.5.4"
+            },
+            "time": "2023-11-03T12:48:44+00:00"
+        },
+        {
             "name": "imagine/imagine",
             "version": "1.3.5",
             "source": {
@@ -2931,6 +3005,69 @@
                 "source": "https://github.com/nelmio/NelmioCorsBundle/tree/2.3.1"
             },
             "time": "2023-02-16T08:49:29+00:00"
+        },
+        {
+            "name": "netgen/query-translator",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/netgen/query-translator.git",
+                "reference": "d38e4e4d947aa205ff81594d302b1080e96b79f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/netgen/query-translator/zipball/d38e4e4d947aa205ff81594d302b1080e96b79f6",
+                "reference": "d38e4e4d947aa205ff81594d302b1080e96b79f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0||^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.11",
+                "phpunit/phpunit": "*",
+                "symfony/phpunit-bridge": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "QueryTranslator\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Petar Španja",
+                    "email": "petar@spanja.info"
+                }
+            ],
+            "description": "Query Translator is a search query translator with AST representation",
+            "homepage": "https://github.com/netgen/query-translator",
+            "keywords": [
+                "ast",
+                "edismax",
+                "elasticsearch",
+                "generator",
+                "parser",
+                "query",
+                "search",
+                "solr",
+                "tokenizer",
+                "translator"
+            ],
+            "support": {
+                "issues": "https://github.com/netgen/query-translator/issues",
+                "source": "https://github.com/netgen/query-translator/tree/1.1.0"
+            },
+            "time": "2022-01-13T09:24:37+00:00"
         },
         {
             "name": "nikic/php-parser",
