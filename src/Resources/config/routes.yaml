@@ -1,5 +1,5 @@
-check_sql:
-  path: /healthcheck/checks/data
+check_database:
+  path: /healthcheck/checks/database
   controller: Onisep\IbexaHealthCheckBundle\Controller\DatabaseController::check
 
 check_solr:
