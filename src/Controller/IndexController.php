@@ -11,14 +11,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class IndexController extends AbstractController
 {
-    public function check(RedisCheck $redisChecker, DatabaseCheck $databaseChecker, SolrCheck $solrChecker, TikaCheck $tikachecker): JsonResponse
+    public function check(RedisCheck $redisChecker, DatabaseCheck $databaseChecker, SolrCheck $solrChecker, TikaCheck $tikaChecker): JsonResponse
     {
         return new JsonResponse(
             [
                 'redis' => $redisChecker->check(),
                 'database' => $databaseChecker->check(),
                 'solr' => $solrChecker->check(),
-                'tika' => $tikachecker->check(),
+                'tika' => $tikaChecker->check(),
             ]);
     }
 }
