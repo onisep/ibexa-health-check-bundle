@@ -1,7 +1,7 @@
 {
     "name": "onisep/ibexa-health-check-bundle",
     "type": "library",
-    "version": "v1.0.0",
+    "version": "v2.0.0",
     "autoload": {
         "psr-4": {
             "Onisep\\IbexaHealthCheckBundle\\": "src/"
@@ -9,10 +9,10 @@
     },
     "require": {
         "symfony/framework-bundle": "^5.4",
-        "ezsystems/apache-tika-bundle": "~2.0.1",
-        "ezsystems/ezplatform-core": "^2.3",
-        "ezsystems/ezplatform-solr-search-engine": "^3.3",
-        "http-interop/http-factory-guzzle": "^1.2"
+        "ibexa/core": "^4.5.3",
+        "http-interop/http-factory-guzzle": "^1.2",
+        "ibexa/search": "^4.5.3",
+        "ibexa/solr": "^4.5.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.38"

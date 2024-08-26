@@ -16,10 +16,6 @@ services:
 
   Onisep\IbexaHealthCheckBundle\Check\SolrCheck:
     arguments:
-      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\HttpClient'
-      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointRegistry'
-      - '@EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointResolver'
-
-  Onisep\IbexaHealthCheckBundle\Check\TikaCheck:
-    arguments:
-      - '@Vaites\ApacheTika\Clients\WebClient'
+      - '@Ibexa\Solr\Gateway\HttpClient'
+      - '@Ibexa\Solr\Gateway\EndpointRegistry'
+      - '@Ibexa\Solr\Gateway\EndpointResolver'

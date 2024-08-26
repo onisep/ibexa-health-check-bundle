@@ -1,5 +1,5 @@
-check_sql:
-  path: /healthcheck/checks/data
+check_database:
+  path: /healthcheck/checks/database
   controller: Onisep\IbexaHealthCheckBundle\Controller\DatabaseController::check
 
 check_solr:
@@ -9,10 +9,6 @@ check_solr:
 check_redis:
   path: /healthcheck/checks/redis
   controller: Onisep\IbexaHealthCheckBundle\Controller\RedisController::check
-
-check_tika:
-  path: /healthcheck/checks/tika
-  controller: Onisep\IbexaHealthCheckBundle\Controller\TikaController::check
 
 check_index:
   path: /healthcheck/checks

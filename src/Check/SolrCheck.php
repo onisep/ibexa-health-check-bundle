@@ -2,13 +2,13 @@
 
 namespace Onisep\IbexaHealthCheckBundle\Check;
 
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointRegistry;
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\EndpointResolver;
-use EzSystems\EzPlatformSolrSearchEngine\Gateway\HttpClient;
+use Ibexa\Solr\Gateway\EndpointRegistry;
+use Ibexa\Solr\Gateway\EndpointResolver;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class SolrCheck extends Check implements CheckInterface
 {
-    /** @var HttpClient */
+    /** @var HttpClientInterface */
     private $client;
 
     /** @var EndpointRegistry */
@@ -17,7 +17,7 @@ class SolrCheck extends Check implements CheckInterface
     /** @var EndpointResolver */
     private $endpointResolver;
 
-    public function __construct(HttpClient $client, EndpointRegistry $endpointRegistry, EndpointResolver $endpointResolver)
+    public function __construct(HttpClientInterface $client, EndpointRegistry $endpointRegistry, EndpointResolver $endpointResolver)
     {
         $this->client = $client;
         $this->endpointRegistry = $endpointRegistry;
@@ -26,17 +26,13 @@ class SolrCheck extends Check implements CheckInterface
 
     public function check(): array
     {
-        $response = $this->client->request(
-            'GET',
-            $this->endpointRegistry->getEndpoint(
-                $this->endpointResolver->getEntryEndpoint()
-            ),
-            '/admin/ping'
-        );
+        $url = $this->endpointRegistry->getEndpoint($this->endpointResolver->getEntryEndpoint())->getURL() . '/admin/ping';
 
-        return [
-            'success' => 'OK' === json_decode($response->body)->{'status'},
-            'detail' => ['Qtime' => json_decode($response->body)->{'responseHeader'}->{'QTime'}],
-        ];
+        $response = $this->client->request('GET', $url);
+
+        return $this->result(
+            'OK' === json_decode($response->getContent())->{'status'},
+            ['Qtime' => json_decode($response->getContent())->{'responseHeader'}->{'QTime'}]
+        );
     }
 }
