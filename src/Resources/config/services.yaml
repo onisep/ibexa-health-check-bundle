@@ -19,7 +19,3 @@ services:
       - '@Ibexa\Solr\Gateway\HttpClient'
       - '@Ibexa\Solr\Gateway\EndpointRegistry'
       - '@Ibexa\Solr\Gateway\EndpointResolver'
-
-  Onisep\IbexaHealthCheckBundle\Check\TikaCheck:
-    arguments:
-      - '@Vaites\ApacheTika\Clients\WebClient'

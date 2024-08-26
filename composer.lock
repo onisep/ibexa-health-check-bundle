@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfc37ef6bfffc22e4c8232cf91c4cabd",
+    "content-hash": "061afaa56143ecc149622fd44b097532",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1342,80 +1342,6 @@
                 "source": "https://github.com/doctrine/sql-formatter/tree/1.1.3"
             },
             "time": "2022-05-23T21:33:49+00:00"
-        },
-        {
-            "name": "ezsystems/apache-tika-bundle",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ezsystems/ApacheTikaBundle.git",
-                "reference": "93f50600232e6cb89d31ca67d3581eb6fe8cf2d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ApacheTikaBundle/zipball/93f50600232e6cb89d31ca67d3581eb6fe8cf2d1",
-                "reference": "93f50600232e6cb89d31ca67d3581eb6fe8cf2d1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0",
-                "symfony/framework-bundle": "^5.0",
-                "symfony/http-kernel": "^5.0",
-                "vaites/php-apache-tika": "~0.9"
-            },
-            "replace": {
-                "jolicode/apache-tika-bundle": "self.version"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "v2.16.3",
-                "phpunit/phpunit": "~6.5",
-                "symfony/yaml": "^5.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Joli\\ApacheTikaBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "welcomattic",
-                    "email": "mathieu.santostefano@gmail.com"
-                }
-            ],
-            "description": "Symfony Bundle for https://github.com/vaites/php-apache-tika",
-            "homepage": "https://github.com/jolicode/ApacheTikaBundle",
-            "keywords": [
-                "OCR",
-                "apache",
-                "bundle",
-                "doc",
-                "documents",
-                "docx",
-                "odt",
-                "office",
-                "pdf",
-                "ppt",
-                "pptx",
-                "symfony",
-                "tika"
-            ],
-            "support": {
-                "source": "https://github.com/ezsystems/ApacheTikaBundle/tree/v2.1.0"
-            },
-            "time": "2021-12-14T10:04:21+00:00"
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
@@ -8951,63 +8877,6 @@
                 }
             ],
             "time": "2023-11-21T18:54:41+00:00"
-        },
-        {
-            "name": "vaites/php-apache-tika",
-            "version": "v0.9.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vaites/php-apache-tika.git",
-                "reference": "d8574afe3219a7883c0196ed1636c9cdb7dbaefa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vaites/php-apache-tika/zipball/d8574afe3219a7883c0196ed1636c9cdb7dbaefa",
-                "reference": "d8574afe3219a7883c0196ed1636c9cdb7dbaefa",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Vaites\\ApacheTika\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Martínez",
-                    "email": "contacto@davidmartinez.net"
-                }
-            ],
-            "description": "Apache Tika bindings for PHP: extracts text from documents and images (with OCR), metadata and more...",
-            "keywords": [
-                "OCR",
-                "apache",
-                "doc",
-                "documents",
-                "docx",
-                "odt",
-                "office",
-                "pdf",
-                "ppt",
-                "pptx",
-                "tika"
-            ],
-            "support": {
-                "issues": "https://github.com/vaites/php-apache-tika/issues",
-                "source": "https://github.com/vaites/php-apache-tika/tree/0.x"
-            },
-            "time": "2020-07-26T01:14:36+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",

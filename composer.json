@@ -9,7 +9,6 @@
     },
     "require": {
         "symfony/framework-bundle": "^5.4",
-        "ezsystems/apache-tika-bundle": "*",
         "ibexa/core": "^4.5.3",
         "http-interop/http-factory-guzzle": "^1.2",
         "ibexa/search": "^4.5.3",

@@ -10,10 +10,6 @@ check_redis:
   path: /healthcheck/checks/redis
   controller: Onisep\IbexaHealthCheckBundle\Controller\RedisController::check
 
-check_tika:
-  path: /healthcheck/checks/tika
-  controller: Onisep\IbexaHealthCheckBundle\Controller\TikaController::check
-
 check_index:
   path: /healthcheck/checks
   controller: Onisep\IbexaHealthCheckBundle\Controller\IndexController::check
