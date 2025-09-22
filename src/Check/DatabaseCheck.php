@@ -18,6 +18,6 @@ class DatabaseCheck extends Check implements CheckInterface
             ->executeQuery('SELECT 1 + 1 as result')
             ->fetchOne();
 
-        return $this->result('2' === $result);
+        return $this->result(2 === (int) $result);
     }
 }
