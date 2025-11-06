@@ -9,8 +9,9 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class IbexaHealthCheckBundle extends Bundle
 {
-    protected $name = 'IbexaHealthCheckBundle';
+    protected string $name = 'IbexaHealthCheckBundle';
 
+    #[\Override]
     protected function getContainerExtensionClass(): string
     {
         return IbexaHealthCheckExtension::class;

@@ -1,19 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Onisep\IbexaHealthCheckBundle\Check;
 
 use Doctrine\Persistence\ManagerRegistry;
 
 class DatabaseCheck extends Check implements CheckInterface
 {
-    public function __construct(ManagerRegistry $doctrine)
+    public function __construct(private readonly ManagerRegistry $managerRegistry)
     {
-        $this->doctrine = $doctrine;
     }
 
     public function check(): array
     {
-        $result = $this->doctrine
+        $result = $this->managerRegistry
             ->getConnection()
             ->executeQuery('SELECT 1 + 1 as result')
             ->fetchOne();

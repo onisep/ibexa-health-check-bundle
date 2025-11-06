@@ -5,8 +5,8 @@ Symfony bundle to make sure the tools used are working properly.
 
 ## Requirements
 
-* php: >=7.4
-* ibexa: 4.0+
+* php: >=8.3
+* ibexa: 5.0+
 
 ## Installation
 

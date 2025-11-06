@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Onisep\IbexaHealthCheckBundle\Controller;
 
 use Onisep\IbexaHealthCheckBundle\Check\SolrCheck;
@@ -8,8 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SolrController extends AbstractController
 {
-    public function check(SolrCheck $checker): JsonResponse
+    public function check(SolrCheck $solrCheck): JsonResponse
     {
-        return new JsonResponse($checker->check());
+        return new JsonResponse($solrCheck->check());
     }
 }
