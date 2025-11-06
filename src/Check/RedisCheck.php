@@ -1,25 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Onisep\IbexaHealthCheckBundle\Check;
 
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Contracts\Cache\ItemInterface;
+use Ibexa\Core\Persistence\Cache\Adapter\TransactionalInMemoryCacheAdapter;
 
 class RedisCheck extends Check implements CheckInterface
 {
+    public function __construct(private readonly TransactionalInMemoryCacheAdapter $cache)
+    {
+    }
+
     public function check(): array
     {
-        $cache = new FilesystemAdapter();
-        $cacheTest = $cache->get('my_cache_key', function (ItemInterface $item): string {
-            $date1 = gettimeofday($as_float = true);
-            $item->expiresAfter(1);
+        $value = gettimeofday(true);
+        $item = $this->cache->getItem('my_cache_key');
+        $item
+            ->set($value)
+            ->expiresAfter(1)
+        ;
+        $this->cache->save($item);
 
-            return $date1;
-        });
-        sleep(1);
+        usleep(1001000);
 
-        $date2 = gettimeofday($as_float = true);
-
-        return $this->result($cacheTest !== $date2);
+        return $this->result($this->cache->getItem('my_cache_key')->get() !== $value);
     }
 }

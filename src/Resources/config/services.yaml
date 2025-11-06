@@ -6,16 +6,7 @@ services:
 
   Onisep\IbexaHealthCheckBundle\Controller\:
     resource: '../../Controller/*Controller.php'
-    tags: [ 'controller.service_arguments' ]
+    tags: ['controller.service_arguments']
 
   Onisep\IbexaHealthCheckBundle\Check\:
     resource: '../../Check/*Check.php'
-
-  Onisep\IbexaHealthCheckBundle\Check\DataCheck:
-    tags: [ 'doctrine.orm.entity_manager' ]
-
-  Onisep\IbexaHealthCheckBundle\Check\SolrCheck:
-    arguments:
-      - '@Ibexa\Solr\Gateway\HttpClient'
-      - '@Ibexa\Solr\Gateway\EndpointRegistry'
-      - '@Ibexa\Solr\Gateway\EndpointResolver'
